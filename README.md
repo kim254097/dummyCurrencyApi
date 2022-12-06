@@ -1,10 +1,10 @@
 # dummyApiCurrency
 api rest with mock data for front-end project testing
 
-steps to use
+## steps to use :
 
-1 - download Golang
-3 - set GOPATH in environment variables
-2 - download the project in "GOPATH/src/github.com"
-4 - open a cmd in the project path
-5 - run "go run main.go"
+* download Golang => https://go.dev/doc/install
+* set GOPATH in environment variables
+* download the project in "GOPATH/src/github.com"
+* open a cmd in the project path
+* execute "go run main.go" or "go build main.go" to create .exe
