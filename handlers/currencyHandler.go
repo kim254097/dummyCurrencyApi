@@ -7,7 +7,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/kim254097/dummyApiCurrency/db"
+	"github.com/kim254097/dummyCurrencyApi/db"
 )
 
 var currencyList = db.AllCurrency{
