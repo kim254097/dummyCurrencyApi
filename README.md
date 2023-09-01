@@ -1,4 +1,4 @@
-# dummyApiCurrency
+# dummyCurrencyApi
 api rest with mock data for front-end project testing
 
 ## steps to use :
