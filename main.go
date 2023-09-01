@@ -6,7 +6,7 @@ import (
 	"strconv"
 
 	"github.com/gorilla/mux"
-	handler "github.com/kim254097/dummyApiCurrency/handlers"
+	handler "github.com/kim254097/dummyCurrencyApi/handlers"
 )
 
 func main() {
