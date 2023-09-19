@@ -33,11 +33,17 @@ var currencyList = db.AllCurrency{
 	},
 }
 
+func enableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+}
+
 func HomeLink(w http.ResponseWriter, r *http.Request) {
+	enableCors(&w)
 	fmt.Fprintf(w, "Welcome home!")
 }
 
 func CreateCurrency(w http.ResponseWriter, r *http.Request) {
+	enableCors(&w)
 	var newCurrency db.Currency
 	reqBody, err := ioutil.ReadAll(r.Body)
 	if err != nil {
@@ -52,6 +58,7 @@ func CreateCurrency(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetOneCurrency(w http.ResponseWriter, r *http.Request) {
+	enableCors(&w)
 	currencyID := mux.Vars(r)["id"]
 
 	for _, singleCurrency := range currencyList {
@@ -62,10 +69,12 @@ func GetOneCurrency(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetAllCurrency(w http.ResponseWriter, r *http.Request) {
+	enableCors(&w)
 	json.NewEncoder(w).Encode(currencyList)
 }
 
 func UpdateCurrency(w http.ResponseWriter, r *http.Request) {
+	enableCors(&w)
 	currencyID := mux.Vars(r)["id"]
 	var updatedCurrency db.Currency
 
@@ -86,6 +95,7 @@ func UpdateCurrency(w http.ResponseWriter, r *http.Request) {
 }
 
 func DeleteCurrency(w http.ResponseWriter, r *http.Request) {
+	enableCors(&w)
 	currencyID := mux.Vars(r)["id"]
 
 	for i, singleCurrency := range currencyList {
